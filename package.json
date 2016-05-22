@@ -1,0 +1,28 @@
+{
+  "name": "node_chat",
+  "version": "1.0.0",
+  "description": "realtime-chat-app",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "mongoose": "^4.4.17",
+    "express": "^4.13.4",
+    "socket.io": "^1.4.6",
+    "mongodb": "^2.1.19"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vratkalkar/NodeChat.git"
+  },
+  "author": "Vivek Ratkalkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vratkalkar/NodeChat/issues"
+  },
+  "homepage": "https://github.com/vratkalkar/NodeChat#readme"
+}

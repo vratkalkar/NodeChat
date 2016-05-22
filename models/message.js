@@ -1,6 +1,11 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var ObjectID = Schema.ObjectId;
+//var Message = mongoose.model('Message');
 
-var Message = new mongoose.Schema({
+//mongoose.connect('localhost');
+
+var Message = mongoose.Schema({
 	author: String,
 	message: String,
 	createDate: {
@@ -8,3 +13,5 @@ var Message = new mongoose.Schema({
 		default: Date.now
 	}
 });
+
+mongoose.model('Message', Message);

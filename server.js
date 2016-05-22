@@ -1,15 +1,14 @@
+require('./core/mongoose.js');
+require('./models/message.js');
 var mongoose = require('mongoose');
-var express = require('express');
-var app = express();
+var app = require('express')();
 var bodyParser = require('body-parser');
-var morgan = require('morgan');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var Message = mongoose.model('Message');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(morgan());
 
 app.get('/chat', function(req, res){
 	res.sendFile(__dirname + '/index.html');
