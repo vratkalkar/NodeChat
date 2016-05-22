@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+mongoose.connect(process.env.MONGO_URI);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
