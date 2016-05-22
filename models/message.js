@@ -1,9 +1,8 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ObjectID = Schema.ObjectId;
-//var Message = mongoose.model('Message');
 
-//mongoose.connect('localhost');
+mongoose.connect('localhost');
 
 var Message = mongoose.Schema({
 	author: String,
