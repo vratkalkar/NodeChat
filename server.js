@@ -6,10 +6,25 @@ var bodyParser = require('body-parser');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
-mongoose.connect(process.env.MONGO_URI);
+//Find the database to connect to, if not found default to localhost
+var uriString = process.env.MONGOLAB_URI ||
+				process.env.MONGOHQ_URL ||
+				'mongodb://localhost/NodeChat'
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+//Listen on established port or default to port 5000
+var port = process.env.PORT || 5000
+http.listen(port, function(){
+	console.log('listening on *:' + port);
+});
+
+//Connect to database via mongoose connect
+mongoose.connect(uriString, function(err,res){
+	if (err) {
+		console.log("Error connecting to: " + uriString + ' . ' + err);
+	} else {
+		console.log('Succesfully connected to: ' + uriString);
+	}
+});
 
 app.get('/chat', function(req, res){
 	res.sendFile(__dirname + '/index.html');
@@ -43,7 +58,3 @@ app.get('/messages', function(req, res, next){
 	});
 });
 
-var port = process.env.PORT || 3000
-http.listen(port, function(){
-	console.log('listening on *:' + port);
-});
