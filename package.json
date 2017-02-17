@@ -4,11 +4,10 @@
   "description": "realtime-chat-app",
   "main": "index.js",
   "dependencies": {
-    "body-parser": "^1.15.1",
-    "mongoose": "^4.4.17",
-    "express": "^4.13.4",
-    "socket.io": "^1.4.6",
-    "mongodb": "^2.1.19"
+    "mongoose": "~4.8.3",
+    "express": "~4.14.1",
+    "socket.io": "~1.7.3",
+    "mongodb": "~2.2.24"
   },
   "devDependencies": {},
   "scripts": {
